@@ -2,14 +2,26 @@
 name = "alexwu"
 version = "0.1.0"
 description = "Alex Wu's data science helper functions"
-authors = [
-    {name = "Alexander Wu", email = "alexander.wu@roche.com"},
+authors = [{ name = "Alexander Wu", email = "alexander.wu@roche.com" }]
+dependencies = [
+    "pandas>=2.0.3",
+    "numpy>=1.25.2",
+    "scipy>=1.9.3",
+    "ipython>=8.14.0",
+    "ipykernel>=6.25.1",
+    "plotly>=5.15.0",
+    "jinja2>=3.1.2",
 ]
-dependencies = []
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 readme = "README.md"
-license = {text = "MIT"}
+license = { text = "MIT" }
 
-[build-system]
-requires = ["pdm-backend"]
-build-backend = "pdm.backend"
+[project.optional-dependencies]
+copy = ["pyperclip>=1.8.2"]
+plotly = ["ploty"]
+
+[tool.pdm.dev-dependencies]
+test = ["pytest>=7.4.0", "hypothesis>=6.82.3"]
+
+[tool.ruff]
+line-length = 120
