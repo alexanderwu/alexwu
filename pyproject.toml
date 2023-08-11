@@ -20,8 +20,23 @@ license = { text = "MIT" }
 copy = ["pyperclip>=1.8.2"]
 plotly = ["ploty"]
 
+[tool.pdm]
 [tool.pdm.dev-dependencies]
 test = ["pytest>=7.4.0", "hypothesis>=6.82.3"]
+doc = [
+    "mkdocs>=1.5.2",
+    "mkdocstrings[python]>=0.22.0",
+    "markdown-include>=0.8.1",
+]
+
+[tool.pdm.scripts]
+test = "pytest"
+doc = { shell = "mkdocs serve -a localhost:8888", help = "Start the dev server for doc preview" }
 
 [tool.ruff]
 line-length = 120
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
