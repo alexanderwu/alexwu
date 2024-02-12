@@ -12,7 +12,7 @@ dependencies = [
     "plotly>=5.15.0",
     "jinja2>=3.1.2",
 ]
-requires-python = ">=3.11"
+requires-python = ">=3.10"
 readme = "README.md"
 license = { text = "MIT" }
 
@@ -39,4 +39,3 @@ line-length = 120
 [build-system]
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
-
